@@ -40,18 +40,11 @@ class Multiplex:
                 Multiplex.__list_last_seat_number[0]=0
                 Multiplex.__list_last_seat_number[0]+=number_of_tickets
                 i=1
-                
-                
-                #temp=1
-                for temp in range(i,number_of_tickets+1):
+                while(i<=number_of_tickets):
                     
-                    number= 'M1-'+str(temp)
+                    number= 'M1-'+str(i)
                     lst_movie_tickets.append(number)
                     i+=1
-                    
-                print(i)
-                
-                    
                 self.__seat_numbers=lst_movie_tickets
                 self.__total_price = Multiplex.__list_ticket_price[0]*number_of_tickets
                 return self.__seat_numbers 
@@ -124,16 +117,6 @@ else:
     print("Total amount to be paid:", booking2.get_total_price())
     
     
-booking3=Multiplex()
-status=booking3.book_ticket("movie1",6)
-if(status==0):
-    print("invalid movie name")
-elif(status==-1):
-    print("Tickets not available for movie-2")
-else:
-    print("Booking successful")
-    print("Seat Numbers :", booking3.get_seat_numbers())
-    print("Total amount to be paid:", booking3.get_total_price())
     
     
     
