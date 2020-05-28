@@ -8,7 +8,7 @@ class Applicant:
         self.__job_band=None
 
     @staticmethod
-    def get_application_dict(self):
+    def get_application_dict():
         return Applicant.__application_dict
 
 
@@ -27,6 +27,7 @@ class Applicant:
         Applicant.__applicant_id_count+=1
         self.__applicant_id=Applicant.__applicant_id_count
         #print(self.__applicant_id)
+        return self.__applicant_id
     
     def apply_for_job(self,job_band):
         

@@ -57,40 +57,38 @@ class Student:
             return False
     
     def check_qualification(self):
-        if(self.validate_age()==1 and self.validate_marks()==1):
-            if(self.__marks>=65):
-                return True
-            else:
-                return False
+        if(self.validate_age()==1 and self.validate_marks()==1 and self.__marks>=65):
+            
+            return True
         else:
             return False
         
     def choose_course(self,course_id):
         if(self.check_qualification()==1):
             
-            if(self.course_id[0]==1001):
+            if(course_id==1001):
                 if(self.__marks>85):
                     self.__fees = 25575*(0.75)
-                    return True
+                    return self.__fees
                 else:
                     self.__fees = 25575
-                    return False
+                    return self.__fees
                 
-            elif(self.course_id[1]==1002):
+            elif(course_id==1002):
             
                 if(self.__marks>85):
                     self.__fees = 15500*(0.75)
-                    return True
+                    return self.__fees
                 else:
                     self.__fees = 15500
-                    return False
+                    return self.__fees
             else:
                 return False
 
 c1=Student()
 c1.set_student_id('s-101')
 c1.set_age(21)
-c1.set_marks(86)
+c1.set_marks(65)
 print(c1.validate_marks())
 print(c1.validate_age())
 print(c1.check_qualification())    
